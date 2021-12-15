@@ -55,7 +55,7 @@ auction_data['collection_month'] = datetime.now().strftime('%m')
 auction_data['collection_day'] = datetime.now().strftime('%d')
 auction_data['collection_hour'] = datetime.now().strftime('%H')
 filename = datetime.now().strftime('Malfurion_NA-%Y-%m-%d-%H-%M.csv')
-auction_data.to_csv(filepath, index = False)
+auction_data.to_csv(filename, index = False)
 folderName = 'WoWAH'  # Please set the folder name.
 
 #folders = drive.ListFile(
