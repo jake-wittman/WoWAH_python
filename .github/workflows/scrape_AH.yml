@@ -8,15 +8,14 @@ jobs:
   build:
     runs-on: ubuntu-latest # THink set OS here
     steps:
-
-     - name: checkout repo content
-        uses: actions/checkout@v2 # checkout the repository content to github runner
-
-
+    
+      - name: checkout repo content
+        uses: actions/checkout@v2
+        
       - name: setup python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8' # install the python version needed
+          python-version: '3.8'
           
       - name: install python packages
         run: |
@@ -29,14 +28,14 @@ jobs:
           CLIENT_SECRET_WOW: ${{ secrets.CLIENT_SECRET_WOW }}
         run: python scrape_AH.py
 
-      -name: commit files
+      - name: commit files
         run: |
           git config --local user.email 'action@github.com'
           git config --local user.name 'github action'
           git add -A
           git commit -m 'update data' -a
 
-      -name: push changes
+      - name: push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
