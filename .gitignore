@@ -132,5 +132,4 @@ dmypy.json
 # Other stuff
 client_secrets.json
 config.py
-settings.yaml
 credentials.json

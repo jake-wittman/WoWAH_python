@@ -1,0 +1,28 @@
+name: scrape_wow_ah
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Run every hour, I think?
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest # THink set OS here
+    steps:
+
+      - name: checkout repo content
+        uses: actions/checkout@v2 # checkout the repository content to github runner
+        - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8' # install the python version needed
+          
+      - name: install python packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
+      - name: execute py script # run scrape_AH.py to get the latest data
+        env: 
+          CLIENT_ID_WOW: ${{ secrets.CLIENT_ID_WOW }}
+          CLIENT_SECRET_WOW: ${{ secrets.CLIENT_SECRET_WOW }}
+        run: python scrape_AH.py
