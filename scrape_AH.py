@@ -3,12 +3,12 @@ import os
 import requests
 from datetime import datetime
 import pandas as pd
-from pydrive.auth import GoogleAuth
-from pydrive.drive import GoogleDrive
+from pydrive2.auth import GoogleAuth
+from pydrive2.drive import GoogleDrive
 
-#gauth = GoogleAuth()
-#gauth.CommandLineAuth()
-#drive = GoogleDrive(gauth)
+gauth = GoogleAuth()
+gauth.CommandLineAuth()
+drive = GoogleDrive(gauth)
 
 # Create access toeken
 def create_access_token(client_id, client_secret, region = "us"):
