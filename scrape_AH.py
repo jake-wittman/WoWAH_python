@@ -24,6 +24,8 @@ def get_malfurion(search):
    response = requests.get(search)
    return response.json()["auctions"]
 
+CLIENT_ID_WOW = os.environ.get('CLIENT_ID_WOW')
+CLIENT_SECRET_WOW = os.environ.get('CLIENT_SECRET_WOW')
 response = create_access_token(CLIENT_ID_WOW, CLIENT_SECRET_WOW)
 token = response['access_token']
 

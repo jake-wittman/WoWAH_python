@@ -11,7 +11,8 @@ jobs:
 
       - name: checkout repo content
         uses: actions/checkout@v2 # checkout the repository content to github runner
-        - name: setup python
+
+      - name: setup python
         uses: actions/setup-python@v2
         with:
           python-version: '3.8' # install the python version needed
@@ -26,3 +27,16 @@ jobs:
           CLIENT_ID_WOW: ${{ secrets.CLIENT_ID_WOW }}
           CLIENT_SECRET_WOW: ${{ secrets.CLIENT_SECRET_WOW }}
         run: python scrape_AH.py
+
+      -name: commit files
+        run: |
+          git config --local user.email 'action@github.com'
+          git config --local user.name 'github action'
+          git add -A
+          git commit -m 'update data' -a
+
+      -name: push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
