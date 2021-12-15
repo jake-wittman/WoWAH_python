@@ -9,8 +9,9 @@ jobs:
     runs-on: ubuntu-latest # THink set OS here
     steps:
 
-      - name: checkout repo content
+     - name: checkout repo content
         uses: actions/checkout@v2 # checkout the repository content to github runner
+
 
       - name: setup python
         uses: actions/setup-python@v2
