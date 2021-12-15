@@ -33,4 +33,5 @@ jobs:
         env: 
           CLIENT_ID_WOW: ${{ secrets.CLIENT_ID_WOW }}
           CLIENT_SECRET_WOW: ${{ secrets.CLIENT_SECRET_WOW }}
+          DROPBOX_ACCESS: ${{ secrets.DROPBOX_ACCESS}}
         run: python scrape_AH.py
