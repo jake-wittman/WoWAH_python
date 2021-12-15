@@ -1,8 +1,8 @@
 name: scrape_wow_ah
 
-on:
-  schedule:
-    - cron: '0 * * * *' # Run every hour, I think?
+on: push
+  #schedule:
+  #  - cron: '0 * * * *' # Run every hour, I think?
   
 jobs:
   build:

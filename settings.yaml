@@ -1,7 +1,7 @@
 client_config_backend: settings
 client_config:
-  client_id: secrets.GMAIL_CLIENT_ID
-  client_secret: secrets.GMAIL_CLIENT_SECRET
+  client_id: ${GMAIL_CLIENT_ID}
+  client_secret: ${GMAIL_CLIENT_SECRET}
 
 save_credentials: True
 save_credentials_backend: file
