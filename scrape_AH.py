@@ -58,13 +58,13 @@ filename = datetime.now().strftime('Malfurion_NA-%Y-%m-%d-%H-%M.csv')
 auction_data.to_csv(filename, index = False)
 folderName = 'WoWAH'  # Please set the folder name.
 
-#folders = drive.ListFile(
-#    {'q': "title='" + folderName + "' and mimeType='application/vnd.google-apps.folder' and trashed=false"}).GetList()
-#for folder in folders:
- #   if folder['title'] == folderName:
- #       file2 = drive.CreateFile({'parents': [{'id': folder['id']}]})
- #       file2.SetContentFile(filepath)
-  #      file2.Upload()
+folders = drive.ListFile(
+    {'q': "title='" + folderName + "' and mimeType='application/vnd.google-apps.folder' and trashed=false"}).GetList()
+for folder in folders:
+    if folder['title'] == folderName:
+        file2 = drive.CreateFile({'parents': [{'id': folder['id']}]})
+        file2.SetContentFile(filepath)
+        file2.Upload()
 
 
 #file1 = drive.CreateFile({'title': filename})
