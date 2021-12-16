@@ -2,7 +2,7 @@ name: scrape_wow_ah
 
 on: 
   schedule:
-    - cron: '48 * * * *' # Run every 5 minutes
+    - cron: '13/30 * * * *' # Run every 5 minutes
   
 jobs:
   build:
