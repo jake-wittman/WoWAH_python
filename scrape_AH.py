@@ -1,4 +1,11 @@
+#########
+# This script uses access tokens for dropbox and Blizzard API keys to scrape
+# data from the WoW auction house and upload the csv to drop box.
+# The pull_data.py script will pull the data from dropbox, delete it once pulled
+# and add it to the database. 
+#########
 import requests
+import os
 from datetime import datetime
 import pandas as pd
 import dropbox
@@ -57,3 +64,5 @@ auction_data.to_csv(filename, index = False)
 
 with open(filename, 'rb') as f:
    dbx.files_upload(f.read(), dropbox_filename)
+
+os.remove(filename)

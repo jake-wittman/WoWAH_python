@@ -165,3 +165,6 @@ token.R
 *.knit.md
 # R Environment Variables
 .Renviron
+
+# Data
+data/
