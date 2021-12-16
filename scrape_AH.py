@@ -1,11 +1,10 @@
-import os
-# Set up python functions
 import requests
 from datetime import datetime
 import pandas as pd
 import dropbox
+from decouple import config
 
-DROPBOX_ACCESS = os.environ.get('DROPBOX_ACCESS')
+DROPBOX_ACCESS = config('DROPBOX_ACCESS')
 dbx = dropbox.Dropbox(DROPBOX_ACCESS)
 
 # Create access toeken
@@ -22,8 +21,8 @@ def get_malfurion(search):
    response = requests.get(search)
    return response.json()["auctions"]
 
-CLIENT_ID_WOW = os.environ.get('CLIENT_ID_WOW')
-CLIENT_SECRET_WOW = os.environ.get('CLIENT_SECRET_WOW')
+CLIENT_ID_WOW = config('CLIENT_ID_WOW')
+CLIENT_SECRET_WOW = config('CLIENT_SECRET_WOW')
 response = create_access_token(CLIENT_ID_WOW, CLIENT_SECRET_WOW)
 token = response['access_token']
 
