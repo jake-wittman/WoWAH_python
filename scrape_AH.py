@@ -46,14 +46,22 @@ auction_data = pd.DataFrame(auction_data)
 auction_data = auction_data.rename(columns={"id": "auction_id",})
 # Expand the item column
 auction_data = pd.concat([auction_data.drop(['item'], axis=1), auction_data['item'].apply(pd.Series)], axis=1)
+auction_data['id'] = auction_data['id'].map(int).map(str) # Convert to int to remove trailing 0, then to string
 # Unit prices are for stackable items, buyout is for unstackable. I just want a single gold cost column
 auction_data['buyout'] = auction_data['buyout'].fillna(0)
 auction_data['unit_price'] = auction_data['unit_price'].fillna(0)
 auction_data['cost'] = auction_data['buyout'] + auction_data['unit_price']
 # Cost is in copper, convert to gold
 auction_data['cost_g'] = auction_data['cost'] / 10000
+# Remove rows for pets. I don't care about pets
+# And remove columns about pets
+is_pet_mask = auction_data['pet_breed_id'].isna()
+auction_data = auction_data[is_pet_mask]
+auction_data.drop(columns = ['pet_breed_id', 'pet_level', 'pet_quality_id', 'pet_species_id'], inplace = True)
 
 #   These are subgroups of an equipable item with the bonus stats (intellect agility, strength, etc)
+# Make one date time column and also 4 columns for each relevant piece
+auction_data['date_time'] = datetime.now()
 auction_data['collection_year'] = datetime.now().strftime('%Y')
 auction_data['collection_month'] = datetime.now().strftime('%m')
 auction_data['collection_day'] = datetime.now().strftime('%d')
@@ -66,3 +74,5 @@ with open(filename, 'rb') as f:
    dbx.files_upload(f.read(), dropbox_filename)
 
 os.remove(filename)
+
+print("Finished " + filename)
