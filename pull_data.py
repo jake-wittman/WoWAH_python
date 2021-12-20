@@ -3,7 +3,6 @@
 # I'm building a database of this data. 
 ############
 print('Start')
-import requests
 import os
 from datetime import datetime
 import pandas as pd
@@ -15,27 +14,29 @@ print('after imports')
 DROPBOX_ACCESS = config('DROPBOX_ACCESS')
 dbx = dropbox.Dropbox(DROPBOX_ACCESS)
 print('connect to dbx')
+# Had some issues with this script. The only workaround I could find
+# was to specify the full directory path.
+main_dir = 'F:/Documents/WoWAH_py/WoWAH_python/'
 # Download csvs from dropbox
 # These go in the temp_csvs folder until they're added to the databse
 # then they're deleted
-print('get dbx files')
 db_files = dbx.files_list_folder("")
-print(db_files)
+print('got dbx files')
 for i in db_files.entries:
-    print(i.name)
-    print(i.path_lower)
-    dbx.files_download_to_file('data/temp_csvs/'+ i.name, i.path_lower)
-    print(os.path.exists('data/temp_csvs/'+i.name))
-print('dbx files downloaded')
+    with open(main_dir + 'data/temp_csvs/'+ i.name, "wb") as f:
+        metadata, res = dbx.files_download(i.path_lower)
+        f.write(res.content)
+    print('This file downloaded' + i.name)
+print('all dbx files downloaded')
 
 # Connect to database and add csvs
-conn = sqlite3.connect('data/WoWAH_db.sqlite')
+conn = sqlite3.connect(main_dir + 'data/WoWAH_db.sqlite')
 print('connected to db')
-ah_csvs = os.listdir('data/temp_csvs')
+ah_csvs = os.listdir(main_dir + 'data/temp_csvs')
 curs = conn.cursor() # Create cursor w/e that is
 print('cursor made')
 for i in ah_csvs:
-    temp_file = pandas.read_csv('data/temp_csvs/' + i)
+    temp_file = pandas.read_csv(main_dir + 'data/temp_csvs/' + i)
     temp_file['id'] = temp_file['id'].map(str)
     temp_file['date_time'] = pd.to_datetime(temp_file['date_time'])
     temp_file.to_sql('auctions', conn, if_exists='append', index = False)
@@ -47,6 +48,6 @@ for i in db_files.entries:
 print('Finished deleting from dropbox' + datetime.now().strftime('Malfurion_NA-%Y-%m-%d-%H-%M'))
 # And delete  csvs
 for i in ah_csvs:
-    os.remove('data/temp_csvs/' + i)
+    os.remove(main_dir + 'data/temp_csvs/' + i)
 print('Finished deleting from computer' + datetime.now().strftime('Malfurion_NA-%Y-%m-%d-%H-%M'))
 conn.close()

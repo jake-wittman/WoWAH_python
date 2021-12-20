@@ -72,7 +72,7 @@ if len(item_chunks) == 1:
     response = requests.get(search).json()
     response_df = pd.json_normalize(response, record_path = ['results'])
     item_df = response_df
-else:
+elif len(item_chunks) > 1:
     for i in range(1, len(item_chunks)):
         print(i)
         id_char = "||".join(item_chunks[i])
@@ -82,6 +82,8 @@ else:
         item_names.append(response_df)
         time.sleep(1)
     item_df = pd.concat(item_names, ignore_index = True, axis = 0, sort = True)
+else:
+    exit()
 sub_item_df = item_df[['data.id', 'data.is_equippable', 'data.is_stackable',
 'data.level', 'data.max_count', 'data.media.id', 'data.name.en_US', 'data.purchase_price',
 'data.required_level', 'data.sell_price']]
