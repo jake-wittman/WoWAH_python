@@ -44,6 +44,9 @@ auction_data['id'] = auction_data['id'].map(int).map(str)
 
 item_ids = auction_data['id']
 item_ids = pd.Series.tolist(item_ids)
+# Remove duplicates
+item_ids = list(set(item_ids))
+
 # In my experimentation, the API only ever returned 50 items so I split
 # the item IDs into chunks of length 50.
 num_of_chunks = ceil(len(item_ids) / 50)
@@ -51,7 +54,7 @@ length_to_split = [50] * num_of_chunks
 iter_ids = iter(item_ids)
 item_chunks = [list(islice(iter_ids, elem)) for elem in length_to_split]
 item_names = []
-for i in range(1, len(item_chunks)):
+for i in range(0, len(item_chunks) - 1):
     print(i)
     id_char = "||".join(item_chunks[i])
     search = f"https://us.api.blizzard.com/data/wow/search/item?namespace=static-us&locale=en_US&orderby=id&&_pageSize=1000&id={id_char}&_&access_token={token}"
@@ -64,7 +67,7 @@ sub_item_df = item_df[['data.id', 'data.is_equippable', 'data.is_stackable',
 'data.level', 'data.max_count', 'data.media.id', 'data.name.en_US', 'data.purchase_price',
 'data.required_level', 'data.sell_price']]
 sub_item_df.columns = sub_item_df.columns.str.replace(r'data.', '') # Strip the data. prefix
-sub_item_df = sub_item_df.rename(index = {'name.en_US': 'name'})
+sub_item_df = sub_item_df.rename(columns = {'name.en_US': 'name'})
 sub_item_df['id'] = sub_item_df['id'].map(int).map(str)
 # Connect to database and add table
 conn = sqlite3.connect('data/WoWAH_db.sqlite')

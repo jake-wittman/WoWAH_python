@@ -44,6 +44,8 @@ auction_data['id'] = auction_data['id'].map(int).map(str)
 
 item_ids = auction_data['id']
 item_ids = pd.Series.tolist(item_ids)
+# Remove duplicates
+item_ids = list(set(item_ids))
 
 # Get item ids already in database
 # Connect to database and add table
@@ -53,11 +55,18 @@ curs.execute('SELECT id FROM item_id')
 existing_ids = curs.fetchall()
 # convert to a list
 existing_ids = [item for i in existing_ids for item in i]
+# Remove duplicates
+existing_ids = list(set(existing_ids))
 missing_ids = []
 for i in item_ids:
     if i not in existing_ids:
         missing_ids.append(i)
 
+
+# Check that no missing ids are in the existing ids
+# Not actually using this to control flow, just here to check
+# if I need to trouble shoot
+not set(missing_ids).isdisjoint(existing_ids) 
 # In my experimentation, the API only ever returned 50 items so I split
 # the item IDs into chunks of length 50.
 num_of_chunks = ceil(len(missing_ids) / 50)
@@ -66,21 +75,21 @@ iter_ids = iter(missing_ids)
 item_chunks = [list(islice(iter_ids, elem)) for elem in length_to_split]
 item_names = []
 if len(item_chunks) == 1:
-    print(i)
-    id_char = "||".join(item_chunks[i])
+    print(0)
+    id_char = "||".join(item_chunks[0])
     search = f"https://us.api.blizzard.com/data/wow/search/item?namespace=static-us&locale=en_US&orderby=id&&_pageSize=1000&id={id_char}&_&access_token={token}"
     response = requests.get(search).json()
     response_df = pd.json_normalize(response, record_path = ['results'])
     item_df = response_df
 elif len(item_chunks) > 1:
-    for i in range(1, len(item_chunks)):
+    for i in range(0, (len(item_chunks) - 1 )):
         print(i)
         id_char = "||".join(item_chunks[i])
         search = f"https://us.api.blizzard.com/data/wow/search/item?namespace=static-us&locale=en_US&orderby=id&&_pageSize=1000&id={id_char}&_&access_token={token}"
         response = requests.get(search).json()
         response_df = pd.json_normalize(response, record_path = ['results'])
         item_names.append(response_df)
-        time.sleep(1)
+        time.sleep(0.5)
     item_df = pd.concat(item_names, ignore_index = True, axis = 0, sort = True)
 else:
     exit()
@@ -88,7 +97,7 @@ sub_item_df = item_df[['data.id', 'data.is_equippable', 'data.is_stackable',
 'data.level', 'data.max_count', 'data.media.id', 'data.name.en_US', 'data.purchase_price',
 'data.required_level', 'data.sell_price']]
 sub_item_df.columns = sub_item_df.columns.str.replace(r'data.', '') # Strip the data. prefix
-sub_item_df = sub_item_df.rename(index = {'name.en_US': 'name'})
+sub_item_df = sub_item_df.rename(columns = {'name.en_US': 'name'})
 
 # Connect to database and add table
 # Write item id df to db
