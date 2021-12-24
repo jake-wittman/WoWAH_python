@@ -925,3 +925,36 @@ files written to dropbox
 Finished pulling from dropboxMalfurion_NA-2021-12-23-15-07
 Finished deleting from dropboxMalfurion_NA-2021-12-23-15-07
 Finished deleting from computerMalfurion_NA-2021-12-23-15-07
+after imports
+connect to dbx
+got dbx files
+This file downloadedMalfurion_NA-2021-12-23-16-00.csv
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2021-12-23-16-07
+Finished deleting from dropboxMalfurion_NA-2021-12-23-16-07
+Finished deleting from computerMalfurion_NA-2021-12-23-16-07
+after imports
+connect to dbx
+got dbx files
+This file downloadedMalfurion_NA-2021-12-23-17-00.csv
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2021-12-23-17-07
+Finished deleting from dropboxMalfurion_NA-2021-12-23-17-07
+Finished deleting from computerMalfurion_NA-2021-12-23-17-07
+after imports
+connect to dbx
+got dbx files
+This file downloadedMalfurion_NA-2021-12-23-18-00.csv
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2021-12-23-18-07
+Finished deleting from dropboxMalfurion_NA-2021-12-23-18-07
+Finished deleting from computerMalfurion_NA-2021-12-23-18-07
