@@ -4605,3 +4605,729 @@ files written to dropbox
 Finished pulling from dropboxMalfurion_NA-2022-01-07-15-07
 Finished deleting from dropboxMalfurion_NA-2022-01-07-15-07
 Finished deleting from computerMalfurion_NA-2022-01-07-15-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-07-16-07
+Finished deleting from dropboxMalfurion_NA-2022-01-07-16-07
+Finished deleting from computerMalfurion_NA-2022-01-07-16-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-07-17-07
+Finished deleting from dropboxMalfurion_NA-2022-01-07-17-07
+Finished deleting from computerMalfurion_NA-2022-01-07-17-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-07-18-07
+Finished deleting from dropboxMalfurion_NA-2022-01-07-18-07
+Finished deleting from computerMalfurion_NA-2022-01-07-18-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-07-19-07
+Finished deleting from dropboxMalfurion_NA-2022-01-07-19-07
+Finished deleting from computerMalfurion_NA-2022-01-07-19-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-07-20-07
+Finished deleting from dropboxMalfurion_NA-2022-01-07-20-07
+Finished deleting from computerMalfurion_NA-2022-01-07-20-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-07-21-07
+Finished deleting from dropboxMalfurion_NA-2022-01-07-21-07
+Finished deleting from computerMalfurion_NA-2022-01-07-21-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-07-22-07
+Finished deleting from dropboxMalfurion_NA-2022-01-07-22-07
+Finished deleting from computerMalfurion_NA-2022-01-07-22-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-07-23-07
+Finished deleting from dropboxMalfurion_NA-2022-01-07-23-07
+Finished deleting from computerMalfurion_NA-2022-01-07-23-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-08-00-07
+Finished deleting from dropboxMalfurion_NA-2022-01-08-00-07
+Finished deleting from computerMalfurion_NA-2022-01-08-00-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-08-01-07
+Finished deleting from dropboxMalfurion_NA-2022-01-08-01-07
+Finished deleting from computerMalfurion_NA-2022-01-08-01-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-08-02-07
+Finished deleting from dropboxMalfurion_NA-2022-01-08-02-07
+Finished deleting from computerMalfurion_NA-2022-01-08-02-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-08-03-07
+Finished deleting from dropboxMalfurion_NA-2022-01-08-03-07
+Finished deleting from computerMalfurion_NA-2022-01-08-03-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-08-04-07
+Finished deleting from dropboxMalfurion_NA-2022-01-08-04-07
+Finished deleting from computerMalfurion_NA-2022-01-08-04-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-08-05-07
+Finished deleting from dropboxMalfurion_NA-2022-01-08-05-07
+Finished deleting from computerMalfurion_NA-2022-01-08-05-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-08-06-07
+Finished deleting from dropboxMalfurion_NA-2022-01-08-06-07
+Finished deleting from computerMalfurion_NA-2022-01-08-06-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-08-07-07
+Finished deleting from dropboxMalfurion_NA-2022-01-08-07-07
+Finished deleting from computerMalfurion_NA-2022-01-08-07-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-08-08-07
+Finished deleting from dropboxMalfurion_NA-2022-01-08-08-07
+Finished deleting from computerMalfurion_NA-2022-01-08-08-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-08-09-07
+Finished deleting from dropboxMalfurion_NA-2022-01-08-09-07
+Finished deleting from computerMalfurion_NA-2022-01-08-09-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-08-10-07
+Finished deleting from dropboxMalfurion_NA-2022-01-08-10-07
+Finished deleting from computerMalfurion_NA-2022-01-08-10-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-08-11-07
+Finished deleting from dropboxMalfurion_NA-2022-01-08-11-07
+Finished deleting from computerMalfurion_NA-2022-01-08-11-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-08-12-07
+Finished deleting from dropboxMalfurion_NA-2022-01-08-12-07
+Finished deleting from computerMalfurion_NA-2022-01-08-12-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-08-13-07
+Finished deleting from dropboxMalfurion_NA-2022-01-08-13-07
+Finished deleting from computerMalfurion_NA-2022-01-08-13-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-08-14-07
+Finished deleting from dropboxMalfurion_NA-2022-01-08-14-07
+Finished deleting from computerMalfurion_NA-2022-01-08-14-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-08-15-07
+Finished deleting from dropboxMalfurion_NA-2022-01-08-15-07
+Finished deleting from computerMalfurion_NA-2022-01-08-15-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-08-16-07
+Finished deleting from dropboxMalfurion_NA-2022-01-08-16-07
+Finished deleting from computerMalfurion_NA-2022-01-08-16-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-08-17-07
+Finished deleting from dropboxMalfurion_NA-2022-01-08-17-07
+Finished deleting from computerMalfurion_NA-2022-01-08-17-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-08-18-07
+Finished deleting from dropboxMalfurion_NA-2022-01-08-18-07
+Finished deleting from computerMalfurion_NA-2022-01-08-18-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-08-19-07
+Finished deleting from dropboxMalfurion_NA-2022-01-08-19-07
+Finished deleting from computerMalfurion_NA-2022-01-08-19-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-08-20-07
+Finished deleting from dropboxMalfurion_NA-2022-01-08-20-07
+Finished deleting from computerMalfurion_NA-2022-01-08-20-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-08-21-07
+Finished deleting from dropboxMalfurion_NA-2022-01-08-21-07
+Finished deleting from computerMalfurion_NA-2022-01-08-21-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-08-22-07
+Finished deleting from dropboxMalfurion_NA-2022-01-08-22-07
+Finished deleting from computerMalfurion_NA-2022-01-08-22-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-08-23-07
+Finished deleting from dropboxMalfurion_NA-2022-01-08-23-07
+Finished deleting from computerMalfurion_NA-2022-01-08-23-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-09-00-07
+Finished deleting from dropboxMalfurion_NA-2022-01-09-00-07
+Finished deleting from computerMalfurion_NA-2022-01-09-00-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-09-01-07
+Finished deleting from dropboxMalfurion_NA-2022-01-09-01-07
+Finished deleting from computerMalfurion_NA-2022-01-09-01-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-09-02-07
+Finished deleting from dropboxMalfurion_NA-2022-01-09-02-07
+Finished deleting from computerMalfurion_NA-2022-01-09-02-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-09-03-07
+Finished deleting from dropboxMalfurion_NA-2022-01-09-03-07
+Finished deleting from computerMalfurion_NA-2022-01-09-03-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-09-04-07
+Finished deleting from dropboxMalfurion_NA-2022-01-09-04-07
+Finished deleting from computerMalfurion_NA-2022-01-09-04-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-09-05-07
+Finished deleting from dropboxMalfurion_NA-2022-01-09-05-07
+Finished deleting from computerMalfurion_NA-2022-01-09-05-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-09-06-07
+Finished deleting from dropboxMalfurion_NA-2022-01-09-06-07
+Finished deleting from computerMalfurion_NA-2022-01-09-06-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-09-07-07
+Finished deleting from dropboxMalfurion_NA-2022-01-09-07-07
+Finished deleting from computerMalfurion_NA-2022-01-09-07-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-09-08-07
+Finished deleting from dropboxMalfurion_NA-2022-01-09-08-07
+Finished deleting from computerMalfurion_NA-2022-01-09-08-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-09-09-07
+Finished deleting from dropboxMalfurion_NA-2022-01-09-09-07
+Finished deleting from computerMalfurion_NA-2022-01-09-09-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-09-10-07
+Finished deleting from dropboxMalfurion_NA-2022-01-09-10-07
+Finished deleting from computerMalfurion_NA-2022-01-09-10-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-09-11-07
+Finished deleting from dropboxMalfurion_NA-2022-01-09-11-07
+Finished deleting from computerMalfurion_NA-2022-01-09-11-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-09-12-07
+Finished deleting from dropboxMalfurion_NA-2022-01-09-12-07
+Finished deleting from computerMalfurion_NA-2022-01-09-12-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-09-13-07
+Finished deleting from dropboxMalfurion_NA-2022-01-09-13-07
+Finished deleting from computerMalfurion_NA-2022-01-09-13-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-09-14-07
+Finished deleting from dropboxMalfurion_NA-2022-01-09-14-07
+Finished deleting from computerMalfurion_NA-2022-01-09-14-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-09-15-07
+Finished deleting from dropboxMalfurion_NA-2022-01-09-15-07
+Finished deleting from computerMalfurion_NA-2022-01-09-15-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-09-16-07
+Finished deleting from dropboxMalfurion_NA-2022-01-09-16-07
+Finished deleting from computerMalfurion_NA-2022-01-09-16-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-09-17-07
+Finished deleting from dropboxMalfurion_NA-2022-01-09-17-07
+Finished deleting from computerMalfurion_NA-2022-01-09-17-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-09-18-07
+Finished deleting from dropboxMalfurion_NA-2022-01-09-18-07
+Finished deleting from computerMalfurion_NA-2022-01-09-18-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-09-19-07
+Finished deleting from dropboxMalfurion_NA-2022-01-09-19-07
+Finished deleting from computerMalfurion_NA-2022-01-09-19-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-09-20-07
+Finished deleting from dropboxMalfurion_NA-2022-01-09-20-07
+Finished deleting from computerMalfurion_NA-2022-01-09-20-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-09-21-07
+Finished deleting from dropboxMalfurion_NA-2022-01-09-21-07
+Finished deleting from computerMalfurion_NA-2022-01-09-21-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-09-22-07
+Finished deleting from dropboxMalfurion_NA-2022-01-09-22-07
+Finished deleting from computerMalfurion_NA-2022-01-09-22-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-09-23-07
+Finished deleting from dropboxMalfurion_NA-2022-01-09-23-07
+Finished deleting from computerMalfurion_NA-2022-01-09-23-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-10-00-07
+Finished deleting from dropboxMalfurion_NA-2022-01-10-00-07
+Finished deleting from computerMalfurion_NA-2022-01-10-00-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-10-01-07
+Finished deleting from dropboxMalfurion_NA-2022-01-10-01-07
+Finished deleting from computerMalfurion_NA-2022-01-10-01-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-10-02-07
+Finished deleting from dropboxMalfurion_NA-2022-01-10-02-07
+Finished deleting from computerMalfurion_NA-2022-01-10-02-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-10-03-07
+Finished deleting from dropboxMalfurion_NA-2022-01-10-03-07
+Finished deleting from computerMalfurion_NA-2022-01-10-03-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-10-04-07
+Finished deleting from dropboxMalfurion_NA-2022-01-10-04-07
+Finished deleting from computerMalfurion_NA-2022-01-10-04-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-10-05-07
+Finished deleting from dropboxMalfurion_NA-2022-01-10-05-07
+Finished deleting from computerMalfurion_NA-2022-01-10-05-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-10-06-07
+Finished deleting from dropboxMalfurion_NA-2022-01-10-06-07
+Finished deleting from computerMalfurion_NA-2022-01-10-06-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-10-07-07
+Finished deleting from dropboxMalfurion_NA-2022-01-10-07-07
+Finished deleting from computerMalfurion_NA-2022-01-10-07-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-10-08-07
+Finished deleting from dropboxMalfurion_NA-2022-01-10-08-07
+Finished deleting from computerMalfurion_NA-2022-01-10-08-07
+after imports
+connect to dbx
+got dbx files
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-10-09-07
+Finished deleting from dropboxMalfurion_NA-2022-01-10-09-07
+Finished deleting from computerMalfurion_NA-2022-01-10-09-07
+after imports
+connect to dbx
+got dbx files
+This file downloadedMalfurion_NA-2022-01-10-10-01.csv
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-10-10-07
+Finished deleting from dropboxMalfurion_NA-2022-01-10-10-07
+Finished deleting from computerMalfurion_NA-2022-01-10-10-07
+after imports
+connect to dbx
+got dbx files
+This file downloadedMalfurion_NA-2022-01-10-11-00.csv
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-10-11-07
+Finished deleting from dropboxMalfurion_NA-2022-01-10-11-07
+Finished deleting from computerMalfurion_NA-2022-01-10-11-07
+after imports
+connect to dbx
+got dbx files
+This file downloadedMalfurion_NA-2022-01-10-12-00.csv
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-10-12-07
+Finished deleting from dropboxMalfurion_NA-2022-01-10-12-07
+Finished deleting from computerMalfurion_NA-2022-01-10-12-07
+after imports
+connect to dbx
+got dbx files
+This file downloadedMalfurion_NA-2022-01-10-13-01.csv
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-10-13-07
+Finished deleting from dropboxMalfurion_NA-2022-01-10-13-07
+Finished deleting from computerMalfurion_NA-2022-01-10-13-07
+after imports
+connect to dbx
+got dbx files
+This file downloadedMalfurion_NA-2022-01-10-14-00.csv
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-10-14-07
+Finished deleting from dropboxMalfurion_NA-2022-01-10-14-07
+Finished deleting from computerMalfurion_NA-2022-01-10-14-07
+after imports
+connect to dbx
+got dbx files
+This file downloadedMalfurion_NA-2022-01-10-15-01.csv
+all dbx files downloaded
+connected to db
+cursor made
+files written to dropbox
+Finished pulling from dropboxMalfurion_NA-2022-01-10-15-07
+Finished deleting from dropboxMalfurion_NA-2022-01-10-15-07
+Finished deleting from computerMalfurion_NA-2022-01-10-15-07

@@ -1,11 +1,5 @@
 #
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
+
 
 library(shiny)
 library(data.table)
@@ -24,6 +18,7 @@ library(feasts)
 library(forecast)
 library(patchwork)
 library(glue)
+library(purrr)
 source('functions.R')
 
 # Set up some categories for different types of mats
@@ -82,152 +77,7 @@ full_models <- list()
 
 item_choices <- c('SL Herbs', 'SL Ore', 'SL Leather', 
                   'SL Gems', 'SL Cloth', sort(unique(auction_dt$name)))
-run_test <- FALSE
-if (run_test == TRUE) {
-    # Code in this conditional for testing stuff before actually using it
-    input <- NA
-    input$item <- c(sl_herbs, sl_ore)
-    input$fill_NA <- 'fill_prev_value_cost'
-    input$test_size <- 168
-    test <- auction_lazy %>%
-        filter(name %in% input$item) %>%
-        group_by(name, date_time) %>%
-        slice_min(cost_g, with_ties = FALSE) %>%
-        as_tibble() %>%
-        as_tsibble(key = name, index = date_time, regular = TRUE) %>%
-        fill_gaps() # makes implicit gaps explicit
-    
-    # Fill NAs with previous values
-    test <- test %>%
-        mutate(fill_prev_value_cost = cost_g) %>%
-        fill(fill_prev_value_cost, .direction = 'downup')
-    outliers_and_missing <- tsoutliers(test$cost_g)
-    test$interp_cost_g <- test$cost_g
-    test$interp_cost_g[outliers_and_missing$index] <- outliers_and_missing$replacements
-    
-    ts_cost <- msts(test[[input$fill_NA]], seasonal.periods = c(48, 168))
-    # Simple exponential smooth - essentially carries forward last observation
-    # although it's a weight average, with weights controlled by alpha
-    # Not suitable for time series with a trend or seasonality
-    fit <- test %>% 
-        model(ETS(fill_prev_value_cost ~ error('A') + trend('N') + season('N')))
-    fc <- fit %>% 
-        forecast(h = 50)
-    fc %>% 
-        autoplot(test) +
-        geom_line(aes(y = .fitted), col = '#D55E00', data = augment(fit)) +
-        guides(colour = 'none')
-    
-    # Holt's method for trend / damped holt's method
-    test %>% 
-        model(
-            "Holt's method" = ETS(fill_prev_value_cost ~ error('A') + trend('A') + season('N')),
-            "Damped Holt's method" = ETS(fill_prev_value_cost ~ error('A') + trend('Ad') + season('N'))
-        ) %>% 
-        forecast(h = 50) %>% 
-        autoplot(test, level = NULL)
-    
-    # Add seasonality
-    fit <- test %>% 
-        model(additive = ETS(fill_prev_value_cost ~ error('A') + trend('A') + season('A')),
-              multiplicative = ETS(fill_prev_value_cost ~ error('M') + trend('A') + season('M')))
-    fc <- fit %>% forecast(h = 50)
-    fc %>% 
-        autoplot(test)
-    
-    # Compare methods so far
-    fit <- test %>% 
-        model(
-           mean = MEAN(fill_prev_value_cost),
-           naive = NAIVE(fill_prev_value_cost),
-           snaive = SNAIVE(fill_prev_value_cost ~ lag('day')),
-           drift = RW(fill_prev_value_cost ~ drift()),
-           "SES" = ETS(fill_prev_value_cost ~ error('A') + trend('N') + season('N')),
-           "Holt's method" = ETS(fill_prev_value_cost ~ error('A') + trend('A') + season('N')),
-           "Damped Holt's method" = ETS(fill_prev_value_cost ~ error('A') + trend('Ad') + season('N')),
-           additive = ETS(fill_prev_value_cost ~ error('A') + trend('A') + season('A')),
-           multiplicative = ETS(fill_prev_value_cost ~ error('M') + trend('A') + season('M')),
-           'Damped multiplicative' = ETS(fill_prev_value_cost ~ error('M') + trend('Ad') + season('M')),
-            arima = ARIMA(fill_prev_value_cost),
-            search_arima = ARIMA(fill_prev_value_cost, stepwise = FALSE)
-           #dyn_regression = ARIMA(fill_prev_value_cost ~ day + hour)
-        )
-    fc <- fit %>% forecast(h = 168)
-    fc %>% 
-        autoplot(test) +
-        facet_wrap(~.model) +
-        theme(legend.position = 'none')
-    # Compare fits
-    test %>% 
-        # I think .init is essentially the size of the training set (so, 168 hours = 1 week)
-        stretch_tsibble(.init = 168) %>% 
-        model(
-            mean = MEAN(fill_prev_value_cost),
-            naive = NAIVE(fill_prev_value_cost),
-            snaive = SNAIVE(fill_prev_value_cost ~ lag('day')),
-            drift = RW(fill_prev_value_cost ~ drift()),
-            "SES" = ETS(fill_prev_value_cost ~ error('A') + trend('N') + season('N')),
-            "Holt's method" = ETS(fill_prev_value_cost ~ error('A') + trend('A') + season('N')),
-            "Damped Holt's method" = ETS(fill_prev_value_cost ~ error('A') + trend('Ad') + season('N')),
-            additive = ETS(fill_prev_value_cost ~ error('A') + trend('A') + season('A')),
-            multiplicative = ETS(fill_prev_value_cost ~ error('M') + trend('A') + season('M')),
-            'Damped multiplicative' = ETS(fill_prev_value_cost ~ error('M') + trend('Ad') + season('M')),
-            arima = ARIMA(fill_prev_value_cost),
-            search_arima = ARIMA(fill_prev_value_cost, stepwise = FALSE)
-            #dyn_regression = ARIMA(fill_prev_value_cost ~ day + hour)
-        ) %>% 
-        forecast(h = 5) %>%
-        accuracy(test) %>% 
-        arrange(MAE)
-    train_models <- list()
-    test_test_ts <- test %>% 
-        slice(n() - input$test_size:0)
-    train_ts <- anti_join(test, test_test_ts, "date_time")
-    train_models$train_arima <- train_ts %>%
-        model(ARIMA(cost_g))
-    model_eval$arima <- bind_rows(
-        train_models$train_arima %>% accuracy(),
-        train_models$train_arima %>% forecast(h = input$test_size) %>% 
-            accuracy(test)
-    )
-    train_models$train_drift <- train_ts %>%
-        model(RW(cost_g ~ drift()))
-    model_eval$drift <- bind_rows(
-        train_models$train_drift %>% accuracy(),
-        train_models$train_drift %>% forecast(h = input$test_size) %>% 
-            accuracy(test)
-    )
-    
-    # Figuring out how to do combinations of ETS
-    input$ets_error <- c('A', 'M')
-    input$ets_trend <- c('N', 'Ad')
-    input$ets_season <- c('N', 'M', 'A')
-    ets_models <- crossing(input$ets_error, input$ets_season, input$ets_trend, .name_repair = 'universal')
-    ets_models <- ets_models %>% 
-        mutate(full_model_name = paste(input.ets_error, input.ets_season, input.ets_trend, sep = ","))
-    model_formulas <- glue_data(ets_models,
-                                "fill_prev_value_cost ~ error('{input.ets_error}') + trend('{input.ets_trend}') + season('{input.ets_error}')")
-    model_formulas <- purrr::map(model_formulas, ~as.formula(.x))
-    names(model_formulas) <- ets_models$full_model_name
-    fit_ets_models <- map2(model_formulas, names(model_formulas), function(.x, .y) {
-        out <- train_ts %>%
-            model(ETS(.x))
-        names(out)[names(out) == 'ETS(.x)'] <- paste0('ETS(', .y, ')')
-        out
- 
-    }) 
-    map(fit_ets_models, function(.x) {
-        bind_rows(.x %>% accuracy(),
-                  .x %>% forecast(h = input$test_size) %>% accuracy(test))
-    }) %>% 
-        bind_rows()
-    
-    #NNet
-    train_ts %>% 
-        model(NNETAR(fill_prev_value_cost)) %>% 
-        forecast(h = 168) %>% 
-        accuracy(test)
-}
+
 # Define UI
 ui <- fluidPage(
     theme = shinytheme('darkly'),
@@ -305,7 +155,7 @@ ui <- fluidPage(
 # Model panel -------------------------------------------------------------
 
             
-            tabPanel('Models',
+            tabPanel('Train models',
                      fluidRow(column(12,
                                      checkboxGroupInput('models',
                                                         label = 'Which models should be fit for forecasting?',
@@ -382,10 +232,23 @@ ui <- fluidPage(
                      br(),
                      fluidRow(column(12, plotOutput('train_model_plots'))),
                      br(),
-                     fluidRow(column(12, DTOutput('model_train_df')))
+                     fluidRow(column(12, DTOutput('model_train_df'))),
+                     fluidRow(
+                         div(id = 'plot-container',
+                             uiOutput(outputId = 'resdiual_plots')
+                         )
+                     )
+                     
                      ),
-            tabPanel('Exploration',
-                     verbatimTextOutput('Some other data exploration will eventually go here'))
+
+# Forecast panel ----------------------------------------------------------
+
+
+            tabPanel('Forecast',
+                     fluidRow(column(12, p('This tab will show the forecasts from the models
+                                           trained on the "Train models" tab.'))),
+                     fluidRow(column(12, plotOutput('forecast_plots')))
+                     )
         ))
     )
 )
@@ -586,14 +449,13 @@ server <- function(input, output, session) {
             model_formulas <- purrr::map(model_formulas, ~as.formula(.x))
             names(model_formulas) <- ets_models$full_model_name
             # Fit models
-            train_models$train_ets <- map2(model_formulas, names(model_formulas), function(.x, .y) {
+            train_ets <- map2(model_formulas, names(model_formulas), function(.x, .y) {
                 out <- train_ts() %>%
                     model(ETS(.x))
                 names(out)[names(out) == 'ETS(.x)'] <- paste0('ETS(', .y, ')')
                 out
-                
-            }) %>% 
-                reduce(left_join, by = 'name')
+            train_models <- c(train_models, train_ets)    
+            }) 
 
         }
         if ('drift' %in% input$models) {
@@ -625,17 +487,21 @@ server <- function(input, output, session) {
             train_models$train_nnet <- train_ts() %>% 
                 model(NNETAR(cost_g))
         }
-        
-        reduce(train_models, left_join, by = 'name')
-    
+        train_models
     })
     
-    output$model_train_df <- renderDT({fit_train_models() %>% 
+    list_train_models <- reactive({
+        reduce(fit_train_models(), left_join, by = 'name')
+        })
+    
+    output$model_train_df <- renderDT({
+        list_train_models() %>% 
             accuracy() %>% 
             arrange(RMSE) %>% 
             mutate(across(where(is.numeric), ~round(.x, 4)))})
     
-    output$model_test_df <- renderDT({fit_train_models() %>% 
+    output$model_test_df <- renderDT({
+        list_train_models() %>% 
             forecast(h = input$test_size) %>% 
             accuracy(item_ts()) %>% 
             arrange(RMSE) %>% 
@@ -643,10 +509,10 @@ server <- function(input, output, session) {
     
     
     output$train_model_plots <- renderPlot({
-        train_mod_plots <- fit_train_models() %>% 
+        train_mod_plots <- list_train_models() %>% 
             forecast(h = input$test_size) %>%   
             filter(date_time <= input$plot_daterange[2] & date_time >= input$plot_daterange[1]) %>% 
-            autoplot(item_ts())
+            autoplot(train_ts())
         if (input$facet_train_plots == TRUE) {
             train_mod_plots + facet_wrap(~.model)
         } else {
@@ -654,11 +520,57 @@ server <- function(input, output, session) {
         }
         })
     
+    # Put graphs in list
+    plot_list <- eventReactive(input$fit_model, {
+        req(fit_train_models())
+        mable_list <-
+            map(fit_train_models(), ~split(.x, 1:nrow(.x))) %>%
+            unlist(., recursive = FALSE)
+        # gg_tsresiduals returns a list of ggplot objects, can use with wrap_plots
+        # to wrap them
+        plot_list <- map(mable_list, ~ gg_tsresiduals(.x) +
+                             labs(title = paste0(.x$name, " ", pull(
+                                 select(.x,-name)
+                             ))))
+        plot_list <- map(plot_list, function(.x) {
+            .x[[1]] / (.x[[2]] | .x[[3]])
+        })
+        return(plot_list)
+    })
+    # Create a dynamic number of outputs. Using iwalk (and later imap) puts
+    # the index in the .y argument
+    observeEvent(input$fit_model, {
+        req(plot_list())
 
+        iwalk(plot_list(), ~ {
+            output_name <- paste0('plot_', .y)
+            output[[output_name]] <- renderPlot(.x)
+        })
+    })
+
+    output$resdiual_plots <- renderUI({
+        req(plot_list())
+
+        plots_list <- imap(plot_list(), ~ {
+            tagList(plotOutput(outputId = paste0('plot_', .y)),
+                    br())
+
+        })
+        tagList(plots_list)
+    })
     # Forecast ---------------------------------------------------------------
+    output$forecast_plots <- renderPlot({
+        list_train_models() %>% 
+            forecast(., new_data = new_data(item_ts())) %>% 
+            autoplot(filter(item_ts(), date_time >= input$plot_daterange[1]))
+    })
+
+}
+
+
 
     
-}
+
 
 # Run the application 
 shinyApp(ui = ui, server = server)

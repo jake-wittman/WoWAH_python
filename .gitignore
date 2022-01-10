@@ -170,3 +170,6 @@ token.R
 data/
 log.txt
 pull_log.txt
+
+# Scratch file for testing shit
+scratch.R
